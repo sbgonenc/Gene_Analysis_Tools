@@ -1,0 +1,19 @@
+> Without any filtering (for all transcripts(204940))
+cds_length_avg: 551.6790426466283
+tx_length_avg: 1456.5721528252172
+cds/tx = 0.3787516063495878
+
+>With filtering (non-coding transcripts excluded(99380))
+cds_length_avg: 1137.6645502113101
+tx_length_avg: 2046.9212014489838
+cds/tx =  0.5557930365887925
+
+>With filtering (pseudogenes/nonesense mediated decays also excluded(78938)(63942))
+Avg cds length: 1238.503762446477 (only starts filter)  1375.0379249945263 (starts+stops filtered)
+Avg tx length: 2304.5235627961183 (only starts filter)  2596.588736667605  (starts+stops filtered)
+ratios: 0.5374229113733942				0.5295555301372886
+
+> for every 42 (10)
+cds_length_avg: 3009.6
+tx_length_avg:  6168.9
+cds/tx = 	0.48786655643631766

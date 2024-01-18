@@ -1,0 +1,66 @@
+#1	Write an algorithm for a guessing game. The player will think of a number between 1 and 100. Your script will try to guess this number in fewest tries possible. Everytime your script makes a guess, it will print it on the screen and ask the player if it guessed right. If not, the player will type L for lower and H for higher which means the number is lower or higher than your script's guess, respectively. Your script will keep guessing until the user enters T, which stands for True. 
+
+def guess_my_number():
+    secret_number = "oo"
+    guess_number = 50
+    command = ""
+    limit_high = 101
+    limit_low = 0
+    while secret_number != guess_number:
+        command = str(input(("Is it " + str(guess_number) + " ?\n(H)igher or (L)ower?\n")))
+        if command == "H":
+            limit_low = guess_number
+            guess_number = int((limit_high + guess_number) / 2)
+        elif command == "L":
+            limit_high = guess_number
+            guess_number = int((limit_low + guess_number) / 2)
+        elif command == "T":
+            secret_number = guess_number
+        else:
+            print("Sorry?")
+    print("I got you!!")
+
+
+guess_my_number()
+
+#2	You work for an elevator company and you were asked to write a program to control the elevator. Which information would your program would need to keep in memory and how it should act upon user input (in this case pressing the call button). For example the elevator is in the 2nd floor going up to 10th floor and 3 guests on 1st, 3rd and 5th floor called the elevator at the same time. The guests on 1st and 3rd floors want to go up and the one on the 5th floor wants to go down. At which floors should your elevator stop and in which order?
+
+**If elevator is on the 2nd floor and is mobile to going up, it should first stop at 3rd floor, then at the 10th floor, then return to 5th floor, lastly to the 1st floor. 
+(2),3,10,5,1 (wills of the guests are ignored.)
+
+# 3 inputs: 
+	-the floor I'm calling to
+	-the direction I want to go
+	-once elevator comes, the floor I want to go
+#elevator output:
+	-can go up --> nearby target to higher floor
+	-can go down --> nearby target to below floor
+	-stop to pick me --> if my and elevator's directions match
+	-pass --> if my and elevator's directions don't match
+	-stop at the target floor --> the floor I want to get off.
+
+so, elevator should keep the track of currently pressed floor levels and their direction. Also, it should keep the current floor the elevator is on, in its memory.
+
+Called floors should be a list, target floor is the called floor that has minimum distance with the current floor, but only if it is in the same direction of the elevator. The direction of the elevator can be thought as (target floor - current floor), positive integer meaning upwards, negative meaning downwards.
+
+Until elevator reaches target floor, keep elevator direction, increase/decrease current floor.
+
+#----Graded Part----
+#Please briefly describe:
+#	Gene
+	Parts of DNA that encode for a functional RNA, which may result in protein synthesis or regulatory functions.
+
+#	Transcript
+	RNA molecule that is synthesized from  a gene.
+
+#	UTR (untranslated region)
+	Parts of DNA in upstream and downstream of a gene, that is not translated to a protein.
+
+#	Plus and reverse strand of DNA (aka + and -)
+	Plus strand is the coding strand, while reverse strand is the non-coding, complementary strand.
+
+
+#Draw a basic representation of a gene. Show the UTRs, exons and introns
+#Draw the transcript that will be produced from the gene you draw
+#Show the CDS on the transcript's image
+
